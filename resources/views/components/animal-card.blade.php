@@ -1,7 +1,7 @@
 @props(['animal'])
 
 <article class="animal-card">
-    <a href="{{ route('animals.show', $animal) }}">
+    <a href="{{ route('animaux.show', $animal) }}">
         <img src="{{ asset(ltrim($animal->photo, '/')) }}" alt="Photo de {{ $animal->name }}" class="animal-card__image">
     </a>
 
@@ -11,7 +11,7 @@
     <p class="animal-card__description">{{ $animal->description }}</p>
 
     <p class="animal-card__actions">
-        <a href="{{ route('animals.edit', $animal) }}">Modifier</a>
-        <a href="{{ route('animals.delete', $animal) }}">Supprimer</a>
+        <a href="{{ route('animaux.modifier', $animal) }}">Modifier</a>
+        <a href="{{ route('animaux.supprimer', $animal) }}">Supprimer</a>
     </p>
 </article>

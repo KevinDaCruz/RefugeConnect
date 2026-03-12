@@ -13,16 +13,15 @@ class AnimalController extends Controller
 
     public function add()
     {
-        Animal::firstOrCreate([
+        Animal::create([
             'name' => 'Coquillette',
-        ], [
             'species' => 'Chien',
             'age' => 3,
             'description' => 'Une Shiba Inu vive et joyeuse, toujours prête à jouer et à explorer. Coquillette est curieuse, intelligente et très expressive, avec un petit caractère indépendant mais plein de tendresse pour ceux qu’elle aime.',
             'photo' => '/images/animals/coquillette.png',
         ]);
 
-        return redirect()->route('animals.index');
+        return redirect()->route('animaux.index');
     }
 
     public function edit(Animal $animal)
@@ -33,13 +32,13 @@ class AnimalController extends Controller
             'name' => trim($name) . ' modifié',
         ]);
 
-        return redirect()->route('animals.index');
+        return redirect()->route('animaux.index');
     }
 
     public function delete(Animal $animal)
     {
         $animal->delete();
 
-        return redirect()->route('animals.index');
+        return redirect()->route('animaux.index');
     }
 }
