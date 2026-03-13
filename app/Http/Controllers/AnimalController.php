@@ -21,7 +21,7 @@ class AnimalController extends Controller
             'photo' => '/images/animals/coquillette.png',
         ]);
 
-        return redirect()->route('animaux.index');
+        return redirect()->route('animals.index');
     }
 
     public function edit(Animal $animal)
@@ -32,13 +32,13 @@ class AnimalController extends Controller
             'name' => trim($name) . ' modifié',
         ]);
 
-        return redirect()->route('animaux.index');
+        return redirect()->route('animals.index');
     }
 
     public function delete(Animal $animal)
     {
         $animal->delete();
 
-        return redirect()->route('animaux.index');
+        return redirect()->route('animals.index');
     }
 }
